@@ -5,7 +5,7 @@ import {
   Content,
   Overlay,
   TransactionType,
-  TransactionTypeButton,
+  TrButton,
 } from './styles'
 
 export function NewTransactionModal() {
@@ -23,17 +23,15 @@ export function NewTransactionModal() {
           <input type="text" placeholder="Categoria" />
 
           <TransactionType>
-            <TransactionTypeButton variant="income">
+            <TrButton variant="income" value="income">
               <ArrowCircleUp size={24} />
               Entrada
-            </TransactionTypeButton>
-          </TransactionType>
+            </TrButton>
 
-          <TransactionType>
-            <TransactionTypeButton variant="outcome">
+            <TrButton variant="outcome" value="outcome">
               <ArrowCircleDown size={24} />
               Saída
-            </TransactionTypeButton>
+            </TrButton>
           </TransactionType>
 
           <button type="submit">Cadastrar</button>
