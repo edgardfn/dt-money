@@ -1,28 +1,44 @@
 {
-    "transactions":[
-        {
-            "id": 1,
-            "description": "Desenvolvimento de site",
-            "type": "income",
-            "category": "Venda",
-            "price": 14000,
-            "createAt": "2023-02-26T23:00:08.623Z"
-        },
-        {
-            "id": 2,
-            "description": "Hamburger",
-            "type": "outcome",
-            "category": "Alimentação",
-            "price": 60,
-            "createAt": "2023-02-26T23:05:08.623Z"
-        },
-        {
-            "id": 3,
-            "description": "Ignite",
-            "type": "outcome",
-            "category": "Educação",
-            "price": 1980,
-            "createAt": "2023-02-27T19:14:08.623Z"
-        }
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createAt": "2023-02-26T23:00:08.623Z"
+    },
+    {
+      "id": 2,
+      "description": "Hamburger",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 60,
+      "createAt": "2023-02-26T23:05:08.623Z"
+    },
+    {
+      "id": 3,
+      "description": "Ignite",
+      "type": "outcome",
+      "category": "Educação",
+      "price": 1980,
+      "createAt": "2023-02-27T19:14:08.623Z"
+    },
+    {
+      "description": "pizza",
+      "price": 45,
+      "category": "alimentação",
+      "type": "outcome",
+      "createAt": "2023-03-01T01:51:34.183Z",
+      "id": 4
+    },
+    {
+      "description": "pastel",
+      "price": 10,
+      "category": "alimentação",
+      "type": "outcome",
+      "createAt": "2023-03-01T01:54:08.018Z",
+      "id": 5
+    }
+  ]
 }
