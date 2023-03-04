@@ -1,39 +1,40 @@
 import styled from 'styled-components'
 
-export const SearchFormContainer = styled.form`
+export const PaginationContainer = styled.main`
+  width: 100%;
+  max-width: 1120px;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem;
+`
+
+export const ContentContainer = styled.div`
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+`
 
-  input {
-    flex: 1;
-    border-radius: 6px;
-    border: 0;
-    background: ${(props) => props.theme['gray-900']};
-    color: ${(props) => props.theme['gray-300']};
-    padding: 1rem;
+export const ContainerQuantity = styled.div``
 
-    &::placeholder {
-      color: ${(props) => props.theme['gray-500']};
-    }
-  }
+export const ContainerButtons = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
 
   button {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
     border: 0;
     padding: 1rem;
     background: transparent;
     border: 1px solid ${(props) => props.theme['green-300']};
     color: ${(props) => props.theme['green-300']};
-    font-weight: bold;
-    border-radius: 6px;
     cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
 
     &:disabled {
       opacity: 0.6;
       cursor: not-allowed;
+      background: ${(props) => props.theme['green-500']};
+      color: ${(props) => props.theme.white};
     }
 
     &:not(:disabled):hover {

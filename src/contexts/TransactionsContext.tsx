@@ -22,6 +22,10 @@ interface TransactionContextType {
   transactions: Transaction[]
   fetchTransactions: (query?: string) => Promise<void>
   createTransaction: (data: CreateTransactionInput) => Promise<void>
+  // totalPages: number
+  setCurrentPage: (page: number) => void
+  totalTransactions: number
+  currentPage: number
 }
 
 interface TransactionProviderProps {
@@ -32,18 +36,27 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 
 export function TransactionProvider({ children }: TransactionProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  // const [totalPages, setTotalPages] = useState(1)
+  const [totalTransactions, setTotalTransactions] = useState(0)
 
-  const fetchTransactions = useCallback(async (query?: string) => {
-    const response = await api.get('/transactions', {
-      params: {
-        _sort: 'createAt',
-        _order: 'desc',
-        q: query,
-      },
-    })
-
-    setTransactions(response.data)
-  }, [])
+  const fetchTransactions = useCallback(
+    async (query?: string) => {
+      const response = await api.get('/transactions', {
+        params: {
+          _sort: 'createAt',
+          _order: 'desc',
+          q: query,
+          _page: currentPage,
+          _limit: 3,
+        },
+      })
+      // setTotalTransactions(parseFloat(response.headers['x-total-count']))
+      setTotalTransactions(parseFloat(response.headers['x-total-count']))
+      setTransactions(response.data)
+    },
+    [currentPage],
+  )
 
   const createTransaction = useCallback(
     async (data: CreateTransactionInput) => {
@@ -68,7 +81,14 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
 
   return (
     <TransactionsContext.Provider
-      value={{ transactions, fetchTransactions, createTransaction }}
+      value={{
+        transactions,
+        fetchTransactions,
+        createTransaction,
+        setCurrentPage,
+        totalTransactions,
+        currentPage,
+      }}
     >
       {children}
     </TransactionsContext.Provider>
