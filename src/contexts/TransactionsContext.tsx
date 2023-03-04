@@ -26,6 +26,8 @@ interface TransactionContextType {
   setCurrentPage: (page: number) => void
   totalTransactions: number
   currentPage: number
+  fetchAllTransactions: () => Promise<void>
+  allTransactions: Transaction[]
 }
 
 interface TransactionProviderProps {
@@ -36,8 +38,8 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 
 export function TransactionProvider({ children }: TransactionProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
+  const [allTransactions, setAllTransactions] = useState<Transaction[]>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
-  // const [totalPages, setTotalPages] = useState(1)
   const [totalTransactions, setTotalTransactions] = useState(0)
 
   const fetchTransactions = useCallback(
@@ -51,12 +53,21 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
           _limit: 3,
         },
       })
-      // setTotalTransactions(parseFloat(response.headers['x-total-count']))
       setTotalTransactions(parseFloat(response.headers['x-total-count']))
       setTransactions(response.data)
     },
     [currentPage],
   )
+
+  const fetchAllTransactions = useCallback(async () => {
+    const response = await api.get('/transactions', {
+      params: {
+        _sort: 'createAt',
+        _order: 'desc',
+      },
+    })
+    setAllTransactions(response.data)
+  }, [])
 
   const createTransaction = useCallback(
     async (data: CreateTransactionInput) => {
@@ -69,14 +80,16 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
         type,
         createAt: new Date(),
       })
-
+      setTotalTransactions((state) => state + 1)
       setTransactions((state) => [response.data, ...state])
+      setAllTransactions((state) => [response.data, ...state])
     },
     [],
   )
 
   useEffect(() => {
     fetchTransactions()
+    fetchAllTransactions()
   }, [fetchTransactions])
 
   return (
@@ -88,6 +101,8 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
         setCurrentPage,
         totalTransactions,
         currentPage,
+        fetchAllTransactions,
+        allTransactions,
       }}
     >
       {children}

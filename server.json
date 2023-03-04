@@ -39,6 +39,70 @@
       "type": "outcome",
       "createAt": "2023-03-01T01:54:08.018Z",
       "id": 5
+    },
+    {
+      "description": "gatil",
+      "price": 220,
+      "category": "limpeza gatil",
+      "type": "income",
+      "createAt": "2023-03-04T03:09:34.837Z",
+      "id": 6
+    },
+    {
+      "description": "grama",
+      "price": 300,
+      "category": "cortar grama",
+      "type": "income",
+      "createAt": "2023-03-04T03:10:15.000Z",
+      "id": 7
+    },
+    {
+      "description": "pizza",
+      "price": 50,
+      "category": "alimentação",
+      "type": "outcome",
+      "createAt": "2023-03-04T03:11:15.610Z",
+      "id": 8
+    },
+    {
+      "description": "gasolina",
+      "price": 50,
+      "category": "transporte",
+      "type": "outcome",
+      "createAt": "2023-03-04T03:11:39.998Z",
+      "id": 9
+    },
+    {
+      "description": "amazon",
+      "price": 100,
+      "category": "entretenimento",
+      "type": "outcome",
+      "createAt": "2023-03-04T03:12:04.332Z",
+      "id": 10
+    },
+    {
+      "description": "piscina",
+      "price": 300,
+      "category": "trabalho",
+      "type": "income",
+      "createAt": "2023-03-04T03:16:21.332Z",
+      "id": 11
+    },
+    {
+      "description": "mercado",
+      "price": 400,
+      "category": "alimentacao",
+      "type": "outcome",
+      "createAt": "2023-03-04T03:17:00.462Z",
+      "id": 12
+    },
+    {
+      "description": "viagem",
+      "price": 1000,
+      "category": "viagem",
+      "type": "outcome",
+      "createAt": "2023-03-04T03:17:18.765Z",
+      "id": 13
     }
   ]
 }
