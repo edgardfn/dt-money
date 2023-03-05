@@ -83,6 +83,8 @@ export function TransactionProvider({ children }: TransactionProviderProps) {
       setTotalTransactions((state) => state + 1)
       setTransactions((state) => [response.data, ...state])
       setAllTransactions((state) => [response.data, ...state])
+      setCurrentPage(1)
+      fetchTransactions()
     },
     [],
   )
