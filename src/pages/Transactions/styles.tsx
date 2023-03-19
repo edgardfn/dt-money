@@ -39,3 +39,10 @@ export const PriceHighlight = styled.span<PriceHighlightProps>`
       ? props.theme['green-300']
       : props.theme['red-300']};
 `
+
+export const NotFoundContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+`
