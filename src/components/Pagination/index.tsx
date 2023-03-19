@@ -8,9 +8,9 @@ import {
 } from './styles'
 
 export function Pagination() {
-  // const totalPages = useContextSelector(TransactionsContext, (context) => {
-  //   return context.totalPages
-  // })
+  const transactions = useContextSelector(TransactionsContext, (context) => {
+    return context.transactions
+  })
   const setCurrentPage = useContextSelector(TransactionsContext, (context) => {
     return context.setCurrentPage
   })
@@ -34,11 +34,14 @@ export function Pagination() {
   function handleClickNextPage(page: number) {
     setCurrentPage(page)
   }
+
+  const numberOfTransactions = transactions.length
+
   return (
     <PaginationContainer>
       <ContentContainer>
         <ContainerQuantity>
-          <strong>0</strong> - <strong>3</strong> de{' '}
+          <strong>{numberOfTransactions}</strong> - <strong>3</strong> de{' '}
           <strong>{totalTransactions}</strong>
         </ContainerQuantity>
         <ContainerButtons>
