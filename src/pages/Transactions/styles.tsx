@@ -7,6 +7,12 @@ export const TransactionsContainer = styled.main`
   padding: 0 1.5rem;
 `
 
+export const ContentTransactions = styled.div`
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
+`
+
 export const TransactionsTable = styled.table`
   width: 100%;
   border-collapse: separate;

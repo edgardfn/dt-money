@@ -4,13 +4,13 @@ import { Header } from '../../components/Header'
 import { Pagination } from '../../components/Pagination'
 import { Summary } from '../../components/Summary'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
-import { dateFormatter, priceFormatter } from '../../utils/formatter'
+// import { dateFormatter, priceFormatter } from '../../utils/formatter'
 import { SearchForm } from './components/SearchForm'
+import { TransactionCard } from './components/TransactionCard'
 import {
+  ContentTransactions,
   NotFoundContainer,
-  PriceHighlight,
   TransactionsContainer,
-  TransactionsTable,
 } from './styles'
 
 export function Transactions() {
@@ -25,7 +25,24 @@ export function Transactions() {
 
       <TransactionsContainer>
         <SearchForm />
-        <TransactionsTable>
+        <ContentTransactions>
+          {transactions.length > 0 ? (
+            transactions.map((transaction) => {
+              return (
+                <TransactionCard
+                  key={transaction.id}
+                  transaction={transaction}
+                />
+              )
+            })
+          ) : (
+            <NotFoundContainer>
+              <WarningCircle size={32} weight="bold" />
+              Transações não encontradas
+            </NotFoundContainer>
+          )}
+        </ContentTransactions>
+        {/* <TransactionsTable>
           <tbody>
             {transactions.length > 0 ? (
               transactions.map((transaction) => {
@@ -54,7 +71,7 @@ export function Transactions() {
               </tr>
             )}
           </tbody>
-        </TransactionsTable>
+        </TransactionsTable> */}
       </TransactionsContainer>
       <Pagination />
     </div>
