@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const SearchFormContainer = styled.form`
   display: flex;
   gap: 1rem;
+  width: 100%;
 
   input {
     flex: 1;
@@ -42,5 +43,30 @@ export const SearchFormContainer = styled.form`
       color: ${(props) => props.theme.white};
       transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     }
+
+    @media screen and (max-width: 767px) {
+      div {
+        display: none;
+      }
+    }
   }
 `
+export const ContainerText = styled.div``
+
+export const ContainerItemsTransactionsCardsMobileVersion = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
+`
+
+export const TextItemsTransactionsCardsMobileVersion = styled.span``
+
+export const TotalItemsTransactionsCardsMobileVersion = styled.span``
