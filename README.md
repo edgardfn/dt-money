@@ -40,20 +40,59 @@ O layout da aplicação está disponível no Figma:
 
 ### Web
 
-	<img  title="HomeImage" src="./src/assets/tela01.png" width="90%">
-
-  	<img  title="ListCoffeePrint" src="./src/assets/tela02.png" width="90%">
+<img  title="HomeImage" src="./src/assets/tela01.png" width="90%">
+<img  title="ListCoffeePrint" src="./src/assets/tela02.png" width="90%">
 
 ## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-🚧 Em construção... 🚧
+- [ReactJS]
+- [Typescript]
+- [React Router DOM]
+- [Styled Components]
+- [Context API]
+- [Effect Hook]
+- [Axios]
+- [Phosphor Icons]
+- [React Input]
+- Radix ui
+- Zod
+- Context Selectors
+- useCallBack
+- useMemo
+- Json Server
 
 
 ## 🚀 Como executar o projeto
 
-🚧 Em construção... 🚧
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js][nodejs]. 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode][vscode]
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/edgardfn/dt-money.git
+
+# Acesse a pasta raiz do projeto no seu terminal/cmd
+$ cd dt-money
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
+
+# Execute o json server para carregar o back-end da aplicação:
+$ npm run dev:server
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+```
 
 ## 📝 Licença
 
