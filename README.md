@@ -40,7 +40,9 @@ O layout da aplicação está disponível no Figma:
 
 ### Web
 
-🚧 Em construção... 🚧
+	<img  title="HomeImage" src="./src/assets/tela01.png" width="90%">
+
+  	<img  title="ListCoffeePrint" src="./src/assets/tela02.png" width="90%">
 
 ## 🛠 Tecnologias
 
